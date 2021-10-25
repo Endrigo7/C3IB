@@ -3,7 +3,6 @@ package school.cesar.c3ib.repositories;
 import school.cesar.c3ib.entities.Conta;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /*
  * CRUD

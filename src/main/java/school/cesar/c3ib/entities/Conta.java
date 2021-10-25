@@ -10,11 +10,15 @@ import lombok.NoArgsConstructor;
 public class Conta {
 
     private String numero;
-    public double saldo;
+    private double saldo;
     private String senha;
     private Cliente cliente;
 
     public void debitar(double valor){
         saldo = saldo - valor;
+    }
+
+    public void creditar(double valor){
+        saldo += valor;
     }
 }
