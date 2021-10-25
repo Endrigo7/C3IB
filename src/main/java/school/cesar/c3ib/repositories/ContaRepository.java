@@ -1,6 +1,7 @@
 package school.cesar.c3ib.repositories;
 
 import school.cesar.c3ib.entities.Conta;
+import school.cesar.c3ib.entities.Poupanca;
 
 import java.util.ArrayList;
 

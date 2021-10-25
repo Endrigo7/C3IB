@@ -14,6 +14,10 @@ public class Conta {
     private String senha;
     private Cliente cliente;
 
+    public Conta(String numero){
+        this.numero = numero;
+    }
+
     public void debitar(double valor){
         saldo = saldo - valor;
     }
