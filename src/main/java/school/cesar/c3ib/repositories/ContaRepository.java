@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ContaRepository {
 
-    private List<Conta> contas;
+    private ArrayList<Conta> contas;
 
     public ContaRepository(){
         contas = new ArrayList<>();
