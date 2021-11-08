@@ -6,7 +6,6 @@ import lombok.Data;
 public class Poupanca extends Conta {
 
     public Poupanca(){
-        super();
     }
 
     public Poupanca(String numero){
@@ -18,8 +17,8 @@ public class Poupanca extends Conta {
     }
 
     public void renderJuros(){
-        double novoSaldo = getSaldo() * 1.005;
-        setSaldo (novoSaldo);
+        double juros = getSaldo() * 0.005;
+        creditar(juros);
     }
 
     @Override

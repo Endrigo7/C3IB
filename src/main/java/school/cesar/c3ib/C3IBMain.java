@@ -2,37 +2,28 @@ package school.cesar.c3ib;
 
 import school.cesar.c3ib.entities.Cliente;
 import school.cesar.c3ib.entities.Conta;
-import school.cesar.c3ib.entities.Poupanca;
-import school.cesar.c3ib.repositories.ContaRepository;
+import school.cesar.c3ib.services.ContaService;
 
 public class C3IBMain {
 
+    private static ContaService contaService;
+
     public static void main(String[] args) {
-        Poupanca poupanca = new Poupanca();
-        poupanca.setNumero("1");
-        poupanca.creditar(100);
-        System.out.println(poupanca.getSaldo());
+        contaService = new ContaService();
 
-        poupanca.renderJuros();
-        System.out.println(poupanca.getSaldo());
+        contaService.add(new Conta("10", 100, "123",
+                new Cliente("Jair", "Jose", 19)));
 
-        Conta conta = new Conta();
-        conta.setNumero("2");
-        conta.creditar(100);
-        System.out.println(conta);
+        contaService.add(new Conta("11", 200, "123",
+                new Cliente("Bruno", "Jose", 22)));
 
-        ContaRepository contaRepository = new ContaRepository();
-        contaRepository.add(conta);
-        contaRepository.add(poupanca);
+        contaService.add(new Conta("12", 300, "123",
+                new Cliente("Paulo", "Jose", 31)));
 
-        System.out.println(
-                "Encontrou a conta: " + contaRepository.buscarComStream("2")
-        );
 
-        System.out.println(
-                "Encontrou a poupanca: " + contaRepository.buscarComStream("1")
-        );
-
+        System.out.println(contaService.buscar("10"));
+        System.out.println(contaService.buscar("11"));
+        System.out.println(contaService.buscar("12"));
     }
 
 }
